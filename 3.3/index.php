@@ -5,22 +5,38 @@
 	</head>
 	<body>
 		<?php include("./sitio_esqueleto/includes/header.php")?>
-        <?php include("./sitio_esqueleto/includes/menu.php")?>
 
+        <div>
+    <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+    </ul>
+</div>
 
 
 		
 		<section>
 		
-            <?php include("./sitio_esqueleto/includes/nav.php")?>
+        <nav> 
+         <h4>MENÚ</h4>
+        <ul>
+        <li><a>INICIO</a></li>
+        <li><a>BASICOS</a></li>
+        <li><a>FUNCIONES</a></li>
+        <li><a>ARRAYS</a></li>
+        <li><a>BBDD</a></li>
+        </ul>   
+        </nav>
 
 			<main>
 				
 				
 
-            <h1>Portada de inicio</h1>
+            <h2>Portada de inicio</h2>
             <p>Contenido introductorio...</p>
-            <h1>Caracteristicas del sitio web</h1>
+            <h2>Caracteristicas del sitio web</h2>
             <p>Descripción de las características...</p>
 			</main>
 			<?php include("./sitio_esqueleto/includes/aside.php")?>
