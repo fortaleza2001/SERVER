@@ -1,0 +1,90 @@
+body {
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    height: 20%;
+    width: 100%;
+    background-color: black;
+    font-size: 1.5em;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    display: flex;
+    height: 60%;
+    width: 100%;
+}
+
+nav {
+    height: 100%;
+    width: 20%;
+    background-color: gray;
+}
+
+main {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+}
+
+aside {
+    height: 100%;
+    width: 20%;
+    background-color: gray;
+}
+
+footer {
+    height: 20%;
+    width: 100%;
+    background-color: black;
+}
+
+main {
+    height: 60%;
+    width: 100%;
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    
+}
+
+table {
+   
+    width: 300px; /* Ancho de la tabla */
+    height: 500px; /* Ancho de la tabla */
+    margin: auto; /* Centrar la tabla horizontalmente */
+    text-align: center; /* Asegurar que el texto esté centrado */
+}
+
+th {
+    background-color: rgb(22, 231, 231); /* Color de fondo de los títulos */
+    color: black; /* Color del texto de los títulos */
+    height: 30px; /* Altura de la fila del título */
+    text-align: center; /* Centrar texto en los encabezados */
+}
+
+td {
+    height: 30px; /* Altura de las filas de datos */
+    width: 40px; /* Ancho de las columnas */
+    text-align: center; /* Centrar texto en las celdas */
+}
+
+/* Alternar colores de las filas */
+tr:nth-child(even) {
+    background-color: orange; /* Color de fondo de filas pares */
+    color: black; /* Color del texto en filas pares */
+}
+
+tr:nth-child(odd) {
+    background-color: pink; /* Color de fondo de filas impares */
+    color: black; /* Color del texto en filas impares */
+}

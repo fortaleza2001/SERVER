@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 2.3.1</title>   
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+	</head>
+	<body>
+		<header>
+			<h1>Formulario</h1> 
+		</header>
+		<nav></nav>
+		<section>
+			<main>
+				<form action="./code.php" method="GET" class="form-container">
+					<div class="form-group">
+						<label for="nombreEnviado"><b>Introduce tu Nombre:</b></label>
+						<input type="text" id="nombreEnviado" name="nombreEnviado" />
+					</div>
+		
+					<div class="form-group">
+						<label for="apellidoEnviado"><b>Introduce tu Apellido:</b></label>
+						<input type="text" id="apellidoEnviado" name="apellidoEnviado" />
+					</div>
+		
+					
+					<div >
+						<p><b>Pregunta 1. Marca la respuesta Correcta</b></p>
+
+						<label>
+							<input type="radio" name="prop" value='true' /> PHP es un lengiaje de "script" tipo servidor.
+						</label>
+						<label>
+							<input type="radio" name="prop" value="false" /> PHP es un lengiaje de "script" tipo cliente.
+						</label>
+						<label>
+							<input type="radio" name="prop" value="false" /> PHP es un lengiaje fuertemente tipado.
+						</label>
+						<label>
+							<input type="radio" name="prop" value="false" /> PHP es un lenguaje de marcas.
+						</label>
+					</div>
+		
+					
+					<div >
+						<p><b>Pregunta 2. Marca la respuesta o respuestas correctas?</b> (+2)</p>
+						<label>
+							<input type="checkbox" name="lenguajes[]" value="Java" /> Java es un lenguaje servidor cliente
+						</label>
+						<label>
+							<input type="checkbox" name="lenguajes[]" value="Python" /> Python es un lenguaje servidor cliente
+						</label>
+						<label>
+							<input type="checkbox" name="lenguajes[]" value="JavaScript" /> JavaScript es un lenguaje servidor cliente
+						</label>
+						<label>
+							<input type="checkbox" name="lenguajes[]" value="C++" /> C++ es un lenguaje servidor cliente
+						</label>
+					</div>
+		
+					<div class="form-actions">
+						<input type="submit" value="Enviar" />
+						<input type="reset" value="Borrar" />
+					</div>
+				</form>
+			</main>
+		</section>
+		
+	
+		
+		<aside></aside>
+		<footer></footer>
+	</body>
+	<style>
+		.form-container {
+			width: 400px;
+			margin: auto;
+		}
+	
+		.form-group {
+			display: flex;
+			align-items: center; /* Alinea verticalmente */
+			gap: 10px; /* Espacio entre label e input */
+			margin-bottom: 15px; /* Espacio entre los grupos */
+		}
+	
+		input[type="text"] {
+			flex: 1; /* El input ocupa el espacio sobrante */
+			padding: 5px;
+		}
+	
+		.form-actions {
+			display: flex;
+			justify-content: space-between; /* Botones alineados en extremos */
+		}
+	</style>
+</html>

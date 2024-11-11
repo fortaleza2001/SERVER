@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura Media de la Semana</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #00FFFF; 
+        }
+
+        .header {
+            width: 100%;
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 2.5em;
+        }
+
+        .container {
+            background-color: #00E5FF;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #0057ff; 
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            text-align: left;
+            font-size: 1.2em;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1.1em;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        button[type="reset"] {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        TEMPERATURA MEDIA DE LA SEMANA
+    </div>
+
+    <div class="container">
+        <h2>FORMULARIO PETICIÓN TEMPERATURAS</h2>
+        <p>Entrada de temperaturas de la semana</p>
+
+        <form action="code.php" method="post">
+            <label for="lunes">Lunes</label>
+            <input type="number" id="lunes" name="lunes" required>
+
+            <label for="martes">Martes</label>
+            <input type="number" id="martes" name="martes" required>
+
+            <label for="miercoles">Miércoles</label>
+            <input type="number" id="miercoles" name="miercoles" required>
+
+            <label for="jueves">Jueves</label>
+            <input type="number" id="jueves" name="jueves" required>
+
+            <label for="viernes">Viernes</label>
+            <input type="number" id="viernes" name="viernes" required>
+
+            <label for="sabado">Sábado</label>
+            <input type="number" id="sabado" name="sabado" required>
+
+            <label for="domingo">Domingo</label>
+            <input type="number" id="domingo" name="domingo" required>
+
+            <div class="button-container">
+                <button type="submit">Enviar datos</button>
+                <button type="reset">Borrar datos</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<title>Ejercicio 2.3.2</title>   
+		<link rel="stylesheet" type="text/css" href="estilos.css">
+	</head>
+	<body>
+		<header>
+			<h1>Cambio de moneda</h1>
+           
+		</header>
+		<nav></nav>
+		<section>
+			<main>
+				<form action="./code.php" method="GET">
+					<b>Cantidad de euros a cambiar:</b> <input type="number" name="euros"  step="any"  min="0"/><br/><br/>
+					
+                    <b>Elige una moneda de destino:</b>
+					<select id="moneda" name="moneda">
+						<option value="$">Dólar</option>
+						<option value="£">Libra</option>
+					</select>
+					
+					<input type="submit" value="Enviar" />
+					<input type="reset" value="Borrar" />
+				</form>
+			</main>
+		</section>
+		<aside></aside>
+		<footer></footer>
+	</body>
+</html>
