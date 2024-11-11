@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    min-width: calc(100vw - 20px);
+    display: flex;
+    flex-direction: column;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+header{
+    height: 20vh;
+    min-width: calc(100vw - 20px);
+    background-color: black;
+    font-size: 1.5em;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header div{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 80%;
+}
+
+header div a{
+    text-decoration: none;
+    color: white;
+    height: 100%;
+    width: 12%;
+}
+
+header img{
+    height: 80%;
+    margin: 10%;
+}
+
+header h1{
+    width: 75%;
+    text-align: center;
+}
+
+body>div{
+    min-width: (100vw - 20px);
+    height: 5vh;
+}
+
+body>div a{
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+body>div ul{
+    display: flex;
+    justify-content: center;
+    background-color: darkgray;
+    list-style: none;
+    color: black;
+    height: 100%;
+    overflow: hidden;
+    line-height: 1.5em;
+    font-size: 1.5em;
+}
+
+section{
+    display: flex;
+    min-height: 40vh;
+    min-width: calc(100vw - 20px);
+}
+
+section>nav{
+    min-height: 40vh;
+    min-width: 15%;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+}
+
+section nav h4{
+    text-align: center;
+    margin-top: 5px;
+    overflow: hidden;
+}
+
+section nav li{
+    margin: 10px;
+    list-style: none;
+    overflow: hidden;
+}
+
+section nav a{
+    text-decoration: none;
+    color: black;
+}
+
+main{
+    min-height: 40vh;
+    min-width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: top center;
+    justify-content: top center;
+    padding: 5%;
+}
+
+main div{
+    align-items: center;
+    align-content: center;
+}
+
+main li{
+    list-style: none;
+}
+
+main a{
+    text-decoration: none;
+    color: blue;
+}
+
+p{
+    text-align: justify;
+}
+
+section>aside{
+    min-height: 40vh;
+    min-width: 15%;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5em;
+}
+
+section aside a{
+    text-decoration: none;
+    color: black;
+}
+
+section aside li{
+    margin: 40px;
+    list-style: none;
+    text-align: center;
+}
+
+footer{
+    height: 15vh;
+    min-width: calc(100vw - 20px);
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+footer>ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+footer li{
+    margin: 10px;
+}
+
+table {margin:auto;}
+tr.cabecera {background-color:cyan;}
+tr.par {background-color:pink;}
+tr.impar {background-color:orange;}
+td,th {padding:10px;}
+.centrado{text-align: center;}
+
+div.horizontal{
+    display: flex;
+}
+
+form.tablas{
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
+
+form.tablas input[min]{
+    width: 2em;
+}
+
+div.tablas{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+table.matriz{
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+td.matriz{
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    text-align: right;
+}
+
+p.user{
+    text-align: right;
+    color: blueviolet;
+    font-weight: bold;
+}
+
+table,td,th{
+    border:1px solid black;
+    border-collapse: collapse;
+}
