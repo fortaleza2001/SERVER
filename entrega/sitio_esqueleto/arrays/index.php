@@ -12,16 +12,12 @@
 		
 		<section>
 		
-            <?php include("../includes/navbasicos.php")?>
+            <?php include("../includes/navarrays.php")?>
 
 			<main>
-            <a href="http://localhost/server/sitio_esqueleto/basicos/">Inicio-Ejercicios básicos</a>
-			
-            <div style="witdh=100%; text-align: center;"><h1>CAMBIO DE DIVISAS</h1></div>
-			
+				<h2>Zona de ejercicios de  arrays</h2>
+				<p>Aqui se pueden consultar desde el menu de navegacion algunos de los ejercicios realizados en el modulo de programación de arrays</p>
 				
-
-            
 			</main>
 			<?php include("../includes/aside2.php")?>
 		</section>
