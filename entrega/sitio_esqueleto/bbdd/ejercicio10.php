@@ -60,7 +60,10 @@
                         // Encripta la contraseña
                         $clave_encriptada = password_hash($clave, PASSWORD_DEFAULT);
 
-                        // Prepara la consulta de inserción
+                        if(password_verify($clave,$clave_encriptada))
+                        {
+                            echo'<p>'.$nombre.': '.$clave.': '.$clave_encriptada.'</p>';
+                            // Prepara la consulta de inserción
                         $stmt = $conexion->prepare("INSERT INTO usuarios (nombre, clave) VALUES (?, ?)");
                         $stmt->bind_param("ss", $nombre, $clave_encriptada); // "ss" indica dos parámetros de tipo string
 
@@ -73,6 +76,8 @@
 
                         // Cierra la sentencia preparada
                         $stmt->close();
+                        }
+                        
                     }
 
                     // Cierra la conexión a la base de datos
