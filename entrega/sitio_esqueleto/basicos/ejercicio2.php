@@ -5,7 +5,7 @@
 	</head>
 	<body>
 		<?php include("../includes/header2.php")?>
-        <?php include("../includes/menu.php")?>
+        <?php include("../includes/menu2.php")?>
 
         <style>
             

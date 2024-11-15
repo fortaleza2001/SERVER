@@ -33,7 +33,7 @@
 	</head>
 	<body>
 		<?php include("../includes/header2.php")?>
-        <?php include("../includes/menu.php")?>
+        <?php include("../includes/menu2.php")?>
 
 
 
@@ -44,7 +44,7 @@
 
 			<main>
             <div class="container">
-                    <a href="http://localhost/3.3/sitio_esqueleto/basicos/" class="link-inicio">Inicio - Ejercicios BBDD</a>
+                    <a href="index.php" class="link-inicio">Inicio - Ejercicios BBDD</a>
                 </div>
                 <div class="content" style="text-align:center; margin: 20px;">
                     <h1>LOGIN PARA USUARIOS REGISTRADOS</h1>
@@ -53,6 +53,11 @@
               
 
                 <?php
+
+                    
+
+
+
                     $usuario = $_POST['usuario']??null;
                     $contraseña = $_POST['contraseña']??null;
                    
@@ -101,7 +106,7 @@
                         // Comprueba si existe al menos una fila
                         if (mysqli_num_rows($resultado) <= 0) {
                             
-                            echo '<p>Usuario no registrado en la base de datos. Registre <a href ="" >aquí</a>.   </p>';
+                            echo '<p>Usuario no registrado en la base de datos. Registrese <a href ="register.php" >aquí</a>.   </p>';
                         } 
                         else 
                         {
@@ -112,12 +117,16 @@
                             //comprobar si coincide la contraseña
                             if(password_verify($contraseña,$contraseñabbdd))
                             {
-                                echo '<p>Bienvenido /a, '.$usuario.'. Ahora  puedes navegar por los distintos ejercicios de la seccion.</p>';
+                                // Iniciar la sesión
+                                session_start();
+                                $_SESSION['usuario'] = $usuario;
+                              
+                                echo '<p>Bienvenido/a, '.$usuario.'.Ahora puedes navegar por los distintos ejercicios de la sección.</p>';
                             }
 
                             else
                             {
-                                echo '<p>Contraseña incorrecta. Vuelve a  <a href ="" >introducir</a> tus datos.   </p>';
+                                echo '<p>Contraseña incorrecta. Vuelve a  <a href ="login.php" >introducir</a> tus datos.   </p>';
                             }
 
 

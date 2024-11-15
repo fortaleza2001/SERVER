@@ -33,7 +33,7 @@
 	</head>
 	<body>
 		<?php include("../includes/header2.php")?>
-        <?php include("../includes/menu.php")?>
+        <?php include("../includes/menu2.php")?>
 
 
 
@@ -44,7 +44,7 @@
 
 			<main>
             <div class="container">
-                    <a href="http://localhost/3.3/sitio_esqueleto/basicos/" class="link-inicio">Inicio - Ejercicios BBDD</a>
+                    <a href="index.php" class="link-inicio">Inicio - Ejercicios BBDD</a>
                 </div>
                 <div class="content" style="text-align:center; margin: 20px;">
                     <h1>FORMULARIO DE REGISTRO EN BASE DE DATOS</h1>
