@@ -79,7 +79,7 @@
 
             <main>
         <div class="container">
-        <a href="http://localhost/3.3/sitio_esqueleto/basicos/" class="link-inicio">Inicio - Ejercicios básicos</a>
+        <a href="index.php" class="link-inicio">Inicio - Ejercicios básicos</a>
     </div>
     <div class="content" style="text-align:center; margin: 20px;">
     <h1>TEST PHP</h1>
@@ -123,7 +123,7 @@
                 <h1>Resultados del Formulario</h1>
                 <p><strong>Nombre:</strong> $nombre $apellido</p>
                 <p><strong>Resultado de la Prueba:</strong> $puntuacion/2 correctas.</p>
-                <a href='http://localhost/ejercicios2.3/1/'>Formulario </a>";
+                <a href='ejercicio1.php'>Formulario </a>";
         
          
         } 

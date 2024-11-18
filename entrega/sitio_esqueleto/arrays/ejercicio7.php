@@ -1,39 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>matrices</title>
-    <style>
-       body {
-            display: flex;
-            align-items: center;
-            height: 100%;
-            margin: 20px;
-            flex-direction: column;
-        }
-
+<html lang="es">
+	<head>
+		<?php include("../includes/metadata2.php")?>
+        <style>
        
-        .container
-        {
-            display: flex;
-            flex-direction: row;
-            align-items: last baseline;
-            gap: 10px;
-        }
-
-        input{
-            height: 10%;
-            width: 15%;
-            
-        }
         
-     
-    
-    </style>
-</head>
-<body>
-        <?php
+        </style>
+	</head>
+	<body>
+		<?php include("../includes/header2.php")?>
+        <?php include("../includes/menu2.php")?>
+
+        
+
+		
+		<section>
+		
+            <?php include("../includes/navarrays.php")?>
+
+			<main>
+            <div class="container">
+                        <a href="index.php" class="link-inicio">Inicio - Ejercicios Arrays</a>
+                    </div>
+                    <div class="content" style="text-align:center; margin: 20px;">
+                    <h1>PRODUCTO DE MATRICES</h1>
+                </div>
+
+                <?php
        
        function renderMatrix($matrix, $title) {
         echo "<div style='margin: 10px;'>";
@@ -188,13 +181,15 @@ function multiplicarMatrizes($matrix1, $matrix2) {
                     echo '<h1>=</h1>';
                     renderMatrix($resultado, "Producto de A y B");
                     echo "</div>";
+
+                    echo'<a href="ejercicio7.php">Manda uno nuevo</a>';
                 }
 
                 else if($n2 != $n3)
                 {
                     echo('<h1 >DIMENSIÓN DE LAS MATRICES</h1>
                           <p>El numero de columnas de la matriz uno no coincide con el numero de filas de la matriz 2</p>
-                          <a href="http://localhost/ejercicios2.7/7/">Introduce otros datos</a>'
+                          <a href="ejercicio7.php">Introduce otros datos</a>'
                 );
                 }
                 else
@@ -207,15 +202,11 @@ function multiplicarMatrizes($matrix1, $matrix2) {
 
 
         ?>
-
-        
-    
-
- 
-
-
-
-
-    
-</body>
+               
+			</main>
+			<?php include("../includes/aside2.php")?>
+		</section>
+		<?php include("../includes/footer2.php")?>
+	</body>
 </html>
+

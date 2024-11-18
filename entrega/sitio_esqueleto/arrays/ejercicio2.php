@@ -3,27 +3,20 @@
 	<head>
 		<?php include("../includes/metadata2.php")?>
         <style>
-              form {
+          .blue{
+            color: blue;
+            margin-bottom: 10px;
+            align-items: center;
             text-align: center;
-            border: 1px solid #ccc;
-            padding: 20px;
-            border-radius: 10px;
-            background-color: #f9f9f9;
-        }
+          }
+          
+          .green{
+            color: green;
+            margin-bottom: 10px;
+            align-items: center;
+            text-align: center;
+          }
 
-        input[type="number"] {
-            margin-bottom: 20px;
-        }
-
-        button {
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: center;
-        }
         </style>
 	</head>
 	<body>
@@ -38,62 +31,108 @@
             <?php include("../includes/navarrays.php")?>
 
 			<main>
-                <div class="container">
-                        <a href="http://localhost/3.3/sitio_esqueleto/basicos/" class="link-inicio">Inicio - Ejercicios Arrays</a>
-                    </div>
-                    <div class="content" style="text-align:center; margin: 20px;">
-                    <h1>DESGLOSE DE MONEDA</h1>
+            <div class="container">
+                    <a href="http://localhost/3.3/sitio_esqueleto/basicos/" class="link-inicio">Inicio - Ejercicios Arrays</a>
                 </div>
-                <?php
-                function desglosarEuros($euros)
-                {
-                    $monedas = [500, 200, 100, 50, 20, 10, 5, 2, 1];  
-                    $resultado = "";  
-                
-                    for ($i = 0; $i < count($monedas); $i++) {
-                        
-                        $numUnidades = (int)($euros/ $monedas[$i]);  
-                       
-                        $resultado .= "Nº de unidades de ".$monedas[$i]." euros: ".$numUnidades."<br>";
-                        
-                        
-                        $euros = $euros % $monedas[$i];
-                    }
-                
-                    return $resultado;
-                }
-                
-                // Obtenemos el valor enviado por el formulario
-                $eurosenviados = $_POST["eurosenviados"]  ?? null;
-                
-                if($eurosenviados==null)
-                {
-                    echo ' <form action="" method="post">
-                    <h2>FORMULARIO</h2>
-                    <b>Introduce la cantidad de euros a desglosar:</b><br>
-                    <input type="number" name="eurosenviados" required><br>
+                <div class="content" style="text-align:center; margin: 20px;">
+                <h1>ARRAYS ASOCIATIVOS</h1>
+            </div>
 
-                    <div class="button-container">
-                        <button type="submit">Enviar</button>
-                        <button type="reset">Borrar</button>
-                        
-                    </div>
-                </form>';
-                }
-                else
-                {
-                    echo ' <div class="resultado">
-                    <h2>RESULTADO:</h2>
-                    <p>Cantidad pedida de euros a desglosar es: '.$eurosenviados.'</p>
-                    <p>'.desglosarEuros($eurosenviados).'</p>
+            <h1 class="blue">LLamada con arrays de localidades:</h1>
 
-                    <a href="http://localhost/ejercicios2.6/2/">Volver a pedir nuevo desglose</a>
-                
-                </div>';
-                }
+<?php
 
-                ?>
-				
+    $localidades = [ "Palencia" => 80000, "Valladolid" => 350000, "Oviedo" => 120000, "Madrid" => 3320000, "Barcelona" => 1620000, "Zaragoza" => 666880, "Soria" => 39112, "Huesca" => 52463, "Teruel"     => 35691];
+
+    function MostarNormal($array) {
+        if (!is_array($array)) {
+            $mensaje = "Función MostarNormal ejecutada con parámetros incorrectos";
+            echo "<script>console.log('". addslashes($mensaje) ."');</script>";
+            return null;
+        }
+    
+        // Inicia la tabla
+        echo "<table border='1' cellspacing='0' cellpadding='5'>";
+        echo "<tr><th>Índice</th><th>Valor</th></tr>";
+    
+        // Recorre el array y muestra los valores
+        foreach ($array as $indice => $valor) {
+            echo "<tr>";
+            echo "<td>$indice</td>";
+            echo "<td>$valor</td>";
+           
+            echo "</tr>";
+        }
+    
+        echo "</table>";
+    }
+
+    function MostarPorValor($array) {
+        if (!is_array($array)) {
+            $mensaje = "Función MostarNormal ejecutada con parámetros incorrectos";
+            echo "<script>console.log('". addslashes($mensaje) ."');</script>";
+            return null;
+        }
+
+        arsort($array);
+
+    
+        // Inicia la tabla
+        echo "<table border='1' cellspacing='0' cellpadding='5'>";
+        echo "<tr><th>Índice</th><th>Valor</th></tr>";
+    
+        // Recorre el array y muestra los valores
+        foreach ($array as $indice => $valor) {
+            echo "<tr>";
+            echo "<td>$indice</td>";
+            echo "<td>$valor</td>";
+           
+            echo "</tr>";
+        }
+    
+        echo "</table>";
+    }
+    
+
+    function MostarPorIndice($array) {
+        if (!is_array($array)) {
+            $mensaje = "Función MostarNormal ejecutada con parámetros incorrectos";
+            echo "<script>console.log('". addslashes($mensaje) ."');</script>";
+            return null;
+        }
+
+        ksort($array);
+
+    
+        // Inicia la tabla
+        echo "<table border='1' cellspacing='0' cellpadding='5'>";
+        echo "<tr><th>Índice</th><th>Valor</th></tr>";
+    
+        // Recorre el array y muestra los valores
+        foreach ($array as $indice => $valor) {
+            echo "<tr>";
+            echo "<td>$indice</td>";
+            echo "<td>$valor</td>";
+           
+            echo "</tr>";
+        }
+    
+        echo "</table>";
+    }
+
+   echo('<h2 class="green">Datos recibidos normal:</h2>');
+   MostarNormal($localidades);
+
+   echo('<h2 class="green">Datos recibidos ordenador por valor:</h2>');
+   MostarPorValor($localidades);
+
+   echo('<h2 class="green">Datos recibidos ordenador por indice:</h2>');
+   MostarPorIndice($localidades);
+  
+?>
+
+
+            
 			</main>
 			<?php include("../includes/aside2.php")?>
 		</section>

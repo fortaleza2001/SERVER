@@ -48,7 +48,7 @@ tr:nth-child(odd) {
             <?php include("../includes/navbasicos.php")?>
 
 			<main>
-			<a href="http://localhost/3.3/sitio_esqueleto/basicos/" class="link-inicio">Inicio - Ejercicios básicos</a>
+			<a href="index.php" class="link-inicio">Inicio - Ejercicios básicos</a>
                 </div>
                 <div class="content" style="text-align:center; margin: 20px;">
                 <h1>CAMBIO DE DIVISAS</h1>
@@ -87,7 +87,7 @@ for ($i = 1; $i <= 10; $i++) {
 }
 
 echo "</table>";
-echo '<a href="http://localhost/3.3/sitio_esqueleto/basicos/ejercicio3.php">Volver al formulario</a>';
+echo '<a href="ejercicio3.php">Volver al formulario</a>';
 }
 
 

@@ -1,34 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUNCIONES PROPIAS DE ARRAYS</title>
-    <style>
-       body {
-            display: flex;
+<html lang="es">
+	<head>
+		<?php include("../includes/metadata2.php")?>
+        <style>
+           .input-container {
+            display: inline-flex;
             align-items: center;
-            height: 100%;
-            margin: 20px;
-            flex-direction: column;
         }
 
-       
-
-        .blue {
+        .blue{
             color: blue;
+            margin-bottom: 10px;
+            align-items: center;
+            text-align: center;
+          }
+        label {
+            margin-right: 10px;
         }
 
-        .green{
+        .green {
             color: green;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
-     
-    
-    </style>
-</head>
-<body>
-    
-    <h2 class="blue">Uso de funciones propias de strings</h2>
+
+        form{
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        button{
+            width: 40%;
+
+        }
+        
+        </style>
+	</head>
+	<body>
+		<?php include("../includes/header2.php")?>
+        <?php include("../includes/menu2.php")?>
+
+        
+
+		
+		<section>
+		
+            <?php include("../includes/navarrays.php")?>
+
+			<main>
+            <div class="container">
+                        <a href="index.php" class="link-inicio">Inicio - Ejercicios Arrays</a>
+                    </div>
+                    <div class="content" style="text-align:center; margin: 20px;">
+                    <h1>ARRAYS Y STRINGS</h1>
+                </div>
+
+                <h2 class="blue">Uso de funciones propias de strings</h2>
 
     <?php
 
@@ -99,8 +128,10 @@
 
         echo('<p class="green"> Array con palabras invertidas : '.implode(', ',$inverso ).' </p>');
     ?>
-
-
-    
-</body>
+			</main>
+			<?php include("../includes/aside2.php")?>
+		</section>
+		<?php include("../includes/footer2.php")?>
+	</body>
 </html>
+

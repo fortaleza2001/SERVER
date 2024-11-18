@@ -3,59 +3,31 @@
 	<head>
 		<?php include("../includes/metadata2.php")?>
         <style>
-            .container2 {
-                
-            background-color: #00E5FF;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-            justify-content: center
-        }
-
-        h2 {
-            color: #0057ff; 
+            .input-container {
+            display: inline-flex;
+            align-items: center;
         }
 
         label {
-            display: block;
-            margin: 10px 0;
-            text-align: left;
-            font-size: 1.2em;
+            margin-right: 10px;
         }
 
-        input[type="number"] {
-            width: 100%;
-            padding: 8px;
+        .green {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
             margin-bottom: 10px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-            font-size: 1.1em;
         }
 
-        .button-container {
+        form{
+            align-items: center;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 5px;
         }
+        button{
+            width: 40%;
 
-        button {
-            padding: 10px 20px;
-            font-size: 1em;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-        }
-
-        button[type="reset"] {
-            background-color: #f44336;
-            color: white;
         }
         </style>
 	</head>
@@ -63,7 +35,7 @@
 		<?php include("../includes/header2.php")?>
         <?php include("../includes/menu2.php")?>
 
-
+        
 
 		
 		<section>
@@ -72,65 +44,123 @@
 
 			<main>
             <div class="container">
-                        <a href="http://localhost/3.3/sitio_esqueleto/basicos/" class="link-inicio">Inicio - Ejercicios Arrays</a>
+                        <a href="index.php" class="link-inicio">Inicio - Ejercicios Arrays</a>
                     </div>
                     <div class="content" style="text-align:center; margin: 20px;">
-                    <h1>TEMPERATURA MEDIA DE LA SEMANA</h1>
+                    <h1>CLASIFICACION DE LA LIGA</h1>
                 </div>
+
                 <?php
-// Obtenemos el valor enviado por el formulario
-$diasTemperatura = $_POST["dias"] ?? null;
+            // Obtener el equipo seleccionado del formulario
+            $equipo = $_GET['equipo']??null ;
 
-if ($diasTemperatura === null) {
-    echo '<div class="container2">
-            <h2>FORMULARIO PETICIÓN TEMPERATURAS</h2>
-            <h3>Entrada de temperaturas de la semana</h3>
+            if($equipo ==null)
+            {
+                echo'<form action="" method="GET">
+                <div class="input-container">
+                
+                <label for="equipo">Elija el equipo:</label>
+                <select name="equipo" id="equipo">';
+                
+                       
+                        
+                        $listaEquipos = array(
+                            "F.C. Barcelona" => 82, "Real Madrid" => 84, "Atlético Madrid" => 78, "Valencia" => 75,
+                            "Sevilla" => 76, "Villarreal" => 60, "Málaga" => 50, "Espanyol" => 47, "Athletic Bilbao" => 55,
+                            "Celta" => 51, "Real Sociedad" => 46, "Rayo Vallecano" => 49, "Getafe" => 36, "Osasuna" => 33,
+                            "Elche" => 41, "Deportivo" => 38, "Almería" => 29, "Levante" => 37, "Granada" => 35, "Zaragoza" => 32
+                        );
 
-            <form action="" method="post">
-                <label for="lunes">Lunes</label>
-                <input type="number" id="lunes" name="dias[]" required>
+                        
 
-                <label for="martes">Martes</label>
-                <input type="number" id="martes" name="dias[]" required>
+                        foreach ($listaEquipos as $equipo => $puntos) {
+                            echo "<option value=\"$equipo\" required>$equipo</option>";
+                        }
+                  
+                echo'</select>
 
-                <label for="miercoles">Miércoles</label>
-                <input type="number" id="miercoles" name="dias[]" required>
-
-                <label for="jueves">Jueves</label>
-                <input type="number" id="jueves" name="dias[]" required>
-
-                <label for="viernes">Viernes</label>
-                <input type="number" id="viernes" name="dias[]" required>
-
-                <label for="sabado">Sábado</label>
-                <input type="number" id="sabado" name="dias[]" required>
-
-                <label for="domingo">Domingo</label>
-                <input type="number" id="domingo" name="dias[]" required>
-
-                <div class="button-container">
-                    <button type="submit">Enviar datos</button>
-                    <button type="reset">Borrar datos</button>
                 </div>
-            </form>
-        </div>';
-} else {
-    $temperaturaFor = 0;
 
-    // Corregimos el bucle `for` con `$x` como variable
-    for ($x = 0; $x < count($diasTemperatura); $x++) {
-        $temperaturaFor += $diasTemperatura[$x];
-    }
+                <button type="submit">Comprobar</button>
+                </form>';
 
-    $temperaturaFor = $temperaturaFor / count($diasTemperatura);
-    $temperaturaArray_sum = array_sum($diasTemperatura) / count($diasTemperatura);
+          
+                    function MostarNormal($array) {
+                       
+                    
+                        // Inicia la tabla
+                        echo "<table border='1' cellspacing='0' cellpadding='5'>";
+                        echo "<tr><th>Índice</th><th>Valor</th></tr>";
+                    
+                        // Recorre el array y muestra los valores
+                        foreach ($array as $indice => $valor) {
+                            echo "<tr>";
+                            echo "<td>$indice</td>";
+                            echo "<td>$valor</td>";
+                            echo "</tr>";
+                        }
+                    
+                        echo "</table>";
+                    }
 
-    echo '<h2>TEMPERATURA MEDIA</h2>
-          <p>La temperatura media de la semana es: ' . $temperaturaFor . ' (calculada con bucle for)</p>
-          <p>También se puede usar la función array_sum() y dividir por el número de elementos, count o sizeof()</p>
-          <p>El resultado sigue siendo: ' . $temperaturaArray_sum . ' </p>';
-}
-?>
+                    echo '<h2 class="green">Datos del array recibidos:</h2>';
+                    MostarNormal($listaEquipos);
+                
+            }
+            else
+            {
+                $listaEquipos = array(
+                    "F.C. Barcelona" => 82, "Real Madrid" => 84, "Atlético Madrid" => 78, "Valencia" => 75,
+                    "Sevilla" => 76, "Villarreal" => 60, "Málaga" => 50, "Espanyol" => 47, "Athletic Bilbao" => 55,
+                    "Celta" => 51, "Real Sociedad" => 46, "Rayo Vallecano" => 49, "Getafe" => 36, "Osasuna" => 33,
+                    "Elche" => 41, "Deportivo" => 38, "Almería" => 29, "Levante" => 37, "Granada" => 35, "Zaragoza" => 32
+                );
+            
+                // Ordenar los equipos de manera descendente por puntos
+                $listaOrden = $listaEquipos;
+                arsort($listaOrden);
+
+                // Encontrar la posición del equipo
+                 $posicion = array_search($equipo, array_keys($listaOrden)) + 1;
+
+                // Mostrar la posición y los puntos del equipo
+                if ($posicion) {
+                    echo '<p class="green">El ' . $equipo . ' tiene ' . $listaOrden[$equipo] . ' puntos, ahora mismo es el ' . $posicion . 'º en la clasificación.</p>';
+                } else {
+                    echo '<p class="green">El equipo seleccionado no se encontró en la lista.</p>';
+                }
+
+                echo'  <a href="ejercicio3.php" style="text-align:center">Nueva consulta</a>';
+
+                function Mostar($array) {
+                    if (!is_array($array)) {
+                        $mensaje = "Función MostarNormal ejecutada con parámetros incorrectos";
+                        echo "<script>console.log('" . addslashes($mensaje) . "');</script>";
+                        return null;
+                    }
+            
+            
+                    // Inicia la tabla
+                    echo "<table border='1' cellspacing='0' cellpadding='5'>";
+                    echo "<tr><th>Índice</th><th>Valor</th></tr>";
+            
+                    // Recorre el array y muestra los valores
+                    foreach ($array as $indice => $valor) {
+                        echo "<tr>";
+                        echo "<td>$indice</td>";
+                        echo "<td>$valor</td>";
+                        echo "</tr>";
+                    }
+            
+                    echo "</table>";
+                }
+            
+                echo '<h2 class="green">Datos del array recibidos ordenados por valor:</h2>';
+                Mostar($listaOrden);
+            }
+
+        ?>
+              
 
 
 			</main>

@@ -17,7 +17,7 @@
             <?php include("../includes/navbasicos.php")?>
 
 			<main>
-            <a href="http://localhost/3.3/sitio_esqueleto/basicos/" class="link-inicio">Inicio - Ejercicios básicos</a>
+            <a href="index.php" class="link-inicio">Inicio - Ejercicios básicos</a>
                 </div>
                 <div class="content" style="text-align:center; margin: 20px;">
                 <h1>CONVERSOR EUROS</h1>
@@ -70,7 +70,7 @@ echo "
 
 <h1>El cambio realizado es de Euros a ".(($tipo=="$")? "Dollar":"Libras")."</h1>
 <p>".$euros. " euros es igual  a ".convertir($euros,$tipo). " ".(($tipo=="$")? "$":"£")."</p>
-<a href='http://localhost/ejercicios2.3/2/'>Conversor </a>
+<a href='ejercicio2.php'>Conversor </a>
 
 ";
 }

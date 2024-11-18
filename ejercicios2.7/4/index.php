@@ -28,7 +28,7 @@
 </head>
 <body>
     
-    <h1 class="blue">range,array_filter,array_map,array_reduce y arsort</h1>
+    <h2 class="blue">range,array_filter,array_map,array_reduce y arsort</h2>
 
     <?php
 
