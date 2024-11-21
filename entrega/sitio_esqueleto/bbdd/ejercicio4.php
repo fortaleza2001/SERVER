@@ -142,7 +142,7 @@
                            <a href="index.php" class="link-inicio">Inicio - Ejercicios BBDD</a>
                                     </div>
                                     <div class="content" style="text-align:center; margin: 20px;">
-                                    <h1>ESTADISTICA DE PRODUCTOS POR GAMA</h1>
+                                    <h1>CONSULTA DE CLIENTES POR PAIS</h1>
 
                                     
                                 </div>

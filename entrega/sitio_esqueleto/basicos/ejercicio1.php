@@ -138,12 +138,12 @@
             <form action="" method="GET" class="form-container">
                 <div class="form-group">
                     <label for="nombreEnviado"><b>Introduce tu Nombre:</b></label>
-                    <input type="text" id="nombreEnviado" name="nombreEnviado" />
+                    <input type="text" id="nombreEnviado" name="nombreEnviado" required />
                 </div>
         
                 <div class="form-group">
                     <label for="apellidoEnviado"><b>Introduce tu Apellido:</b></label>
-                    <input type="text" id="apellidoEnviado" name="apellidoEnviado" />
+                    <input type="text" id="apellidoEnviado" name="apellidoEnviado"  required />
                 </div>
         
                 <div>
